@@ -39,6 +39,7 @@ int main(int argc, char** argv)
 	dInt = -1;			// инициализация переменной
 	long l;
 	cout << "2^5=" << pow(2, 5) << endl;
+	int res = 5 % 2;
 	unsigned int ui;
 
 	// десятичные дроби (числа с плавающей точкой)
@@ -74,7 +75,7 @@ int main(int argc, char** argv)
 	//cin >> ch;						// ввод
 	//cout << ch;
 
-	// массивы
+	// статические массивы
 	int arr[3];		// массив из 3х int
 	arr[0] = 0;
 	arr[1] = 1;
@@ -144,16 +145,60 @@ int main(int argc, char** argv)
 	for (int i = 0; i < 10; i++)			// i - счетчик
 	{
 		if (i == 5) continue;
-		cout << i << "^2" << "=" << i*i << endl;
+		cout << i << "^2" << "=" << i * i << endl;
 		if (i == 6) break;
 	}
 	cout << endl;
-	for (int i=0;;i+=5)		// условия нет - потенциально бесконечный цикл
+	for (int i = 0;; i += 5)		// условия нет - потенциально бесконечный цикл
 	{
 		if (i >= 6) break;
 		cout << i << "^2" << "=" << i * i << endl;
 	}
 	cout << endl;
+
+	int j = 0;
+	while (j <= 10)
+	{
+		cout << "2^" << j << "=" << pow(2, j) << endl;
+		j++;
+	}
+
+	j = 11;
+	do
+	{
+		cout << "2^" << j << "=" << pow(2, j) << endl;
+		j++;
+	} while (j <= 10);
+	cout << endl;
+
+	dInt = 42;
+	// указатели - pointers
+	int* pdInt;		// указатель на переменную типа int
+	pdInt = &dInt;	// & - взятие адреса
+	cout << "Address dInt=" << &dInt << "; dInt=" << dInt << endl;
+	cout << "pdInt=" << pdInt << "; dInt=" << *pdInt << endl;		// *pdInt - разыменовывание указателя
+	*pdInt = 43;
+	*pdInt *= 2;
+	cout << "dInt=" << dInt << endl;
+
+	// динамический массив
+	int n = 5;
+	//cin >> n;
+	double* dynArray = new double[n];		// динамически выделенная память под массив
+	for (int i = 0; i < n; i++)
+	{
+		dynArray[i] = i;
+	}
+	cout << "dynArray = [";
+	for (int i = 0; i < n; i++)
+	{
+		cout << dynArray[i] << "; ";
+	}
+	cout << "]" << endl;
+	delete[] dynArray;		// освобождение динамически выделенной памяти
+
+	cout << "arr" << arr << "; dynArray=" << dynArray << endl;
+	//cout << "Address dInt=" << pdInt << "; dInt=" << *pdInt << endl;		// *pdInt - разыменовывание указателя
 
 
 	cout << "Bye World" << endl;
