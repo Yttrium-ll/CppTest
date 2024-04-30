@@ -3,6 +3,7 @@
 
 #include <iostream>		// заголовочный файл стандартной библиотеки с функциями ввода/вывода
 #include <string>		// строки
+#include <locale>		// локали для кириллицы
 
 namespace constants
 {
@@ -33,9 +34,11 @@ int sum_int(int a, int b)					// int - тип возвращаемого зна�
 // void main() <- точка входа
 int main(int argc, char** argv)
 {
+	setlocale(LC_ALL, "Russian");
+	cout << "Привет мир" << endl;
 	// целые числа
-	short sh;       // 0..255
-	int dInt;          // объявление переменной
+	short sh;			// 0..255
+	int dInt;			// объявление переменной
 	dInt = -1;			// инициализация переменной
 	long l;
 	cout << "2^5=" << pow(2, 5) << endl;
@@ -199,7 +202,6 @@ int main(int argc, char** argv)
 
 	cout << "arr" << arr << "; dynArray=" << dynArray << endl;
 	//cout << "Address dInt=" << pdInt << "; dInt=" << *pdInt << endl;		// *pdInt - разыменовывание указателя
-
 
 	cout << "Bye World" << endl;
 	return 0;
