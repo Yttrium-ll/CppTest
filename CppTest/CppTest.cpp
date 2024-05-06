@@ -75,7 +75,7 @@ int main(int argc, char** argv)
 	string sRes = sFirst + " and " + sSecond;
 
 	cout << sRes << endl;						// вывод
-	//cin >> ch;						// ввод
+	//cin >> ch;								// ввод
 	//cout << ch;
 
 	// статические массивы
