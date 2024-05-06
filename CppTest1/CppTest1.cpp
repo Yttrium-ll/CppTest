@@ -26,7 +26,10 @@ int main()
 	{
 		cout << "Введите число ";
 		cin >> a;
-		c = c + a;
+		if (a > 0)
+		{
+		c = c + a;	
+		}
 
 	}
 	cout << c << endl;
