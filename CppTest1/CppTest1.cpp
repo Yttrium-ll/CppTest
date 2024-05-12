@@ -40,25 +40,52 @@ int main()
 
 	// Задача N - перевод из двоичной СС в десятичную
 
-	string str;		// 11001010
-	cout << "Введите двоичное число: ";
-	cin >> str;
+	//string str;		// 11001010
+	//cout << "Введите двоичное число: ";
+	//cin >> str;
+	//cout << endl;
+
+	//int res = 0;
+
+	//// последний индекс массива = size - 1
+	//// [0][1][2][3] -> size() = 4
+
+	//for (size_t i = 0; i < str.size(); i++)
+	//{
+	//	 cout << i << ": " << str[i] << endl;
+	//	if (str[i] == '1')
+	//		res += pow(2, str.size() - 1 - i);
+	//}
+
+	//cout << "Десятичное число: " << res << endl;
+
+	//return 0; 
+	int num;		// 11001010
+	cout << "Введите десятичное число: ";
+	cin >> num;
 	cout << endl;
 
-	int res = 0;
+	string res = "";
 
 	// последний индекс массива = size - 1
 	// [0][1][2][3] -> size() = 4
 
-	for (size_t i = 0; i < str.size(); i++)
+	while ( num >= 2)
 	{
-		// cout << i << ": " << str[i] << endl;
-		if (str[i] == '1')
-			res += pow(2, str.size() - 1 - i);
+		num = num / 2;
+		if (num % 2 == 0)
+			res = res + "0";
+		else
+			res = res + "1";
 	}
+	res = res + to_string(num);
 
-	cout << "Десятичное число: " << res << endl;
+	cout << "Двоичное число: " << res << endl;
 
-	return 0;
+	return 0; 
+	
+	
+
+
 }
 
