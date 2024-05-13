@@ -203,6 +203,19 @@ int main(int argc, char** argv)
 	cout << "arr" << arr << "; dynArray=" << dynArray << endl;
 	//cout << "Address dInt=" << pdInt << "; dInt=" << *pdInt << endl;		// *pdInt - разыменовывание указателя
 
+	// Перевод из char в int
+	char ch = '0';		// 48
+	//char ch = '6';
+	//char ch = '7';
+
+	int n;
+
+	while (ch != 'e')
+	{
+		cin >> ch;
+		cout << ch << " " << int(ch) << " " << int(ch) - 48 << endl;
+	}
+
 	cout << "Bye World" << endl;
 	return 0;
 }
